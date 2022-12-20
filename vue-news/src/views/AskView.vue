@@ -1,12 +1,35 @@
 <template>
   <div>
-    <p v-for="item in fetchedAsk">
+    <ul class="ask-list">
+      <li v-for="ask in fetchedAsk" class="post">
+        <!-- 포인트 영역 -->
+        <div class="points">
+          {{ ask.points }}
+        </div>
+        <!-- 기타 정보 영역 -->
+        <div>
+          <p class="ask-title">
+            <router-link :to="`item/${ask.id}`">
+              {{ ask.title }}
+            </router-link>
+          </p>
+          <small class="link-text">
+            {{ ask.time_ago }}, 
+            <router-link :to="`/user/${ask.user}`" class="link-text">
+              {{ ask.user }}
+            </router-link>
+          </small>
+        </div>
+        </li>
+      </ul>
+    </div>
+    <!-- <p v-for="item in fetchedAsk">
       <router-link :to="`item/${item.id}`">
         {{ item.title }}
       </router-link>
       <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -38,6 +61,29 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.ask-list {
+  margin: 0;
+  padding: 0;
+}
+.post {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EEE;
+}
+.points {
+    width: 60px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #42B883;
+}
+.ask-title {
+  margin: 0;
+}
+.link-text {
+  color: #828282;
+}
 </style>

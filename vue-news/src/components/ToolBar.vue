@@ -25,4 +25,8 @@ export default {
 .header a {
     color: white;
 }
+
+.header > a {
+  padding: 0 12px;
+}
 </style>
