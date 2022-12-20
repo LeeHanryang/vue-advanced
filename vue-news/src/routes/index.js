@@ -16,23 +16,23 @@ export const router = new VueRouter({
       redirect: '/news',
     },
     {
-        path: '/news',   // url 주소
-        component: NewsView, // url 주소로 갔을 때 표시 될 컴포넌트
+      path: '/news',   // url 주소
+      component: NewsView, // url 주소로 갔을 때 표시 될 컴포넌트
     },
     {
-        path: '/ask',
-        component: AskView,
+      path: '/ask',
+      component: AskView,
     },
     {
-        path: '/jobs',
-        component: JobsView,
+      path: '/jobs',
+      component: JobsView,
     },
     {
-      path: '/user',
+      path: '/user/:id',
       component: UserView,
     },
     {
-      path: '/item',
+      path: '/item/:id',
       component: ItemView,
     },
   ]
