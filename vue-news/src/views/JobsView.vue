@@ -1,12 +1,11 @@
 <template>
   <div>
-    <ul class="jobs-list">
+    <list-item></list-item>
+    <!-- <ul class="jobs-list">
       <li v-for="(job, index) in fetchedJobs" class="post">
-        <!-- 포인트 영역 -->
         <div class="points">
-          <!-- {{ index + 1 }} -->
+          {{ index + 1 }}
         </div>
-        <!-- 기타 정보 영역 -->
         <div>
           <p class="jobs-title">
             <a :href="job.url">
@@ -21,7 +20,7 @@
           </small>
         </div>
       </li>
-    </ul>
+    </ul> -->
     <!-- <p v-for="job in fetchedJobs">
       <a :href="job.url">
         {{ job.title }}
@@ -34,20 +33,24 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+// import { mapGetters } from 'vuex';
+import ListItem from "../components/ListItem.vue";
 
 export default {
-  computed: {
-    ...mapGetters(['fetchedJobs']),
-  },
-  created() {
-    this.$store.dispatch('FETCH_JOBS');
+  components: {
+    ListItem,
   }
+  // computed: {
+  //   ...mapGetters(['fetchedJobs']),
+  // },
+  // created() {
+  //   this.$store.dispatch('FETCH_JOBS');
+  // }
 }
 </script>
 
 <style scoped>
-.jobs-list {
+/* .jobs-list {
   margin: 0;
   padding: 0;
 }
@@ -70,5 +73,5 @@ export default {
 }
 .link-text {
   color: #828282;
-}
+} */
 </style>
