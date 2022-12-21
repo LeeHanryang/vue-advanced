@@ -4,28 +4,42 @@
             <i class="fa-solid fa-user"></i>
         </div>
         <div class="user-description">
-            <div>
-                {{ UserInfo.id }}
-            </div>
-            <!-- <router-link :to="`/user/${UserInfo.user}`">
-                {{ UserInfo.id }}
+            <!-- <div>
+                {{ info.user }}
+            </div> -->
+            <slot name="username">
+                <!-- 상위 컴포넌트에서 정의할 영역 -->
+            </slot>
+            <!-- <router-link :to="`/user/${info.user}`">
+                {{ info.id }}
             </router-link> -->
             <div class="timeline">
-                {{ UserInfo.created }}
+                <!-- {{ info.created }} -->
+                <slot name="time">
+                    <!-- 상위 컴포넌트에서 정의할 영역 -->
+                </slot>
+            </div>
+            <div>
+                <slot name="karma">
+                    <!-- 상위 컴포넌트에서 정의할 영역 -->
+                </slot>                
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
-    computed: {
-      ...mapGetters({
-        UserInfo: 'fetchedUser',
-      }),
+    props: {
+        info: Object,
     },
+    // computed: {
+    //   ...mapGetters({
+    //     userInfo: 'fetchedUser',
+    //   }),
+    // },
 }
 </script>
 

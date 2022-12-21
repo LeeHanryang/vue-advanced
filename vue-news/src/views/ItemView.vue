@@ -1,8 +1,17 @@
 <template>
   <div>
     <section>
-      <!-- 질문자 상세 정보 -->
-      <div class="user-container">
+      <!-- 사용자 정보 -->
+      <user-profile :info="fetchedItem">
+        <div slot="username">
+          {{ fetchedItem.user }}
+        </div>
+        <template slot="time">
+          {{ fetchedItem.time_ago }}
+        </template>
+        <div slot="karma">{{ fetchedItem.points }}</div>
+      </user-profile>
+      <!-- <div class="user-container">
         <div>
           <i class="fa-solid fa-user"></i>
         </div>
@@ -14,8 +23,10 @@
             {{ fetchedItem.time_ago }}
           </div>
         </div>
-        <h2>{{ fetchedItem.title }}</h2>
-      </div>
+      </div> -->
+    </section>
+    <section>
+      <h2>{{ fetchedItem.title }}</h2>
     </section>
     <section>
       <!-- 질문 글 -->
@@ -29,10 +40,14 @@
 </template>
 
 <script>
-import { fetchItemInfo } from '@/api';
+// import { fetchItemInfo } from '@/api';
 import { mapGetters } from 'vuex';
+import UserProfile from "../components/UserProfile.vue";
 
 export default {
+  components: {
+    UserProfile,
+  },
   computed: {
     ...mapGetters(['fetchedItem']),
   },

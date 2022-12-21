@@ -1,6 +1,14 @@
 <template>
   <div>
-    <user-profile></user-profile>
+    <user-profile :info="userInfo">
+      <div slot="username">
+        {{ userInfo.id }}
+      </div>
+      <div slot="time">
+        {{ userInfo.created }}
+      </div>
+      <div slot="karma">{{ userInfo.karma }}</div>
+    </user-profile>
     <!-- <p>name : {{ userInfo.id }}</p>
     <p>karma : {{ userInfo.karma }}</p>
     <p>created : {{ userInfo.created }}</p> -->
@@ -11,15 +19,16 @@
 import { mapGetters } from 'vuex';
 // import axios from 'axios';
 import UserProfile from "../components/UserProfile.vue";
+
 export default {
   components: {
     UserProfile,
   },
-  // computed: {
-  //   ...mapGetters({
-  //     userInfo: 'fetchedUser',
-  //   }),
-  // },
+  computed: {
+    ...mapGetters({
+      userInfo: 'fetchedUser',
+    }),
+  },
   created() {
     const userName = this.$route.params.id;
     // axios.get(`https://api.hnpwa.com/v0/user/${userName}.json`);
