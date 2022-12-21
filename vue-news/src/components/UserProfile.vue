@@ -18,8 +18,6 @@
                 <slot name="time">
                     <!-- 상위 컴포넌트에서 정의할 영역 -->
                 </slot>
-            </div>
-            <div>
                 <slot name="karma">
                     <!-- 상위 컴포넌트에서 정의할 영역 -->
                 </slot>                
