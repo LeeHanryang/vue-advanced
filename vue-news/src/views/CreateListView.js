@@ -14,7 +14,7 @@ export default function createListView(name) {
                     bus.$emit('end:spinner');
                 })
                 .catch(error => console.log(error));
-            }, 3000);
+            }, 500);
         },
         render(createElement) {
             return createElement(ListView);
