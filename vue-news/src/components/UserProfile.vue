@@ -4,17 +4,10 @@
             <i class="fa-solid fa-user"></i>
         </div>
         <div class="user-description">
-            <!-- <div>
-                {{ info.user }}
-            </div> -->
             <slot name="username">
                 <!-- 상위 컴포넌트에서 정의할 영역 -->
             </slot>
-            <!-- <router-link :to="`/user/${info.user}`">
-                {{ info.id }}
-            </router-link> -->
             <div class="timeline">
-                <!-- {{ info.created }} -->
                 <slot name="time">
                     <!-- 상위 컴포넌트에서 정의할 영역 -->
                 </slot>
@@ -27,17 +20,10 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
-
 export default {
     props: {
         info: Object,
     },
-    // computed: {
-    //   ...mapGetters({
-    //     userInfo: 'fetchedUser',
-    //   }),
-    // },
 }
 </script>
 

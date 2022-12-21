@@ -10,19 +10,6 @@
           {{ 'Posted ' + fetchedItem.time_ago }}
         </template>
       </user-profile>
-      <!-- <div class="user-container">
-        <div>
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="user-description">
-          <router-link :to="`/user/${fetchedItem.user}`">
-            {{ fetchedItem.user }}
-          </router-link>
-          <div class="timeline">
-            {{ fetchedItem.time_ago }}
-          </div>
-        </div>
-      </div> -->
     </section>
     <section>
       <h2>{{ fetchedItem.title }}</h2>
@@ -33,13 +20,10 @@
 
       </div>
     </section>
-    <!-- <p>{{ fetchedItem.title }}</p>
-    <div>{{ fetchedItem.content }}</div> -->
   </div>
 </template>
 
 <script>
-// import { fetchItemInfo } from '@/api';
 import { mapGetters } from 'vuex';
 import UserProfile from "../components/UserProfile.vue";
 
