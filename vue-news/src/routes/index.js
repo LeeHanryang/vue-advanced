@@ -39,6 +39,7 @@ export const router = new VueRouter({
       path: '/jobs',
       name: 'jobs',
       component: JobsView,
+      beforeEnter,
       // component: createListView('JobsView'),
       // beforeEnter(to, from, next) {
       //   bus.$emit('start:spinner');
