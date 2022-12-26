@@ -5,13 +5,12 @@
 </template>
 
 <script>
-import Chart from 'chart.js/auto';
 import {months} from '@/utils/Utils';
 
 export default {
     mounted() {
         // (async function() {
-            new Chart(
+            new this.$_Chart(
                 this.$refs.lineChart,
                 {
                     type: 'line',
